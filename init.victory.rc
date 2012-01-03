@@ -1,23 +1,28 @@
 on init
+# Update BOOTCLASSPATH for wimax
+export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system:/system/vendor/lib/wimax_service.jar
 
 #ko files for vibrator
 insmod /lib/modules/vibrator.ko
+#ko files for wimax
+insmod /lib/modules/wimax_gpio.ko
+insmod /lib/modules/cmc7xx_sdio.ko
+
 on post-fs
 # permissions for MTP device node_temporary permission_will be changed 0660
 chmod 0660 /dev/usb_mtp_gadget 
 chown system system /dev/usb_mtp_gadget
 
-# for wimax
-#chown system system /dev/swmxctl
-#chown system system /dev/uwibro	
-#chmod 0660 /dev/swmxctl
-#chmod 0660 /dev/uwibro
-
-
 # create data/gps for GPS daemon
 mkdir /data/gps 771 gps system
 chown gps system /data/gps
 chmod 0777 /system/vendor/bin/gpsd
+
+# Device control nodes for WiMAX
+exec /system/xbin/busybox mknod -m 0660 /dev/swmxctl c 234 0
+exec /system/xbin/busybox mknod -m 0660 /dev/uwibro c 233 0
+chown system system /dev/swmxctl
+chown system system /dev/uwibro        
 
 # for sensor control
 chown system input /sys/class/input/input0/enable
@@ -288,22 +293,19 @@ user system
 group system inet
 
 #end of PCInternet share
-# [Yagya for Victory WiMAX DHCP 20100208
-#service dhcpcd_wimax /system/bin/dhcpcd uwbr0 -ABK
-#    disabled
-#    oneshot
-# Yagya for Victory WiMAX DHCP 20100208]
 
-# Yagya for Victory "sprintpcs.com" realm issue as below.
-# wimax cannot send and receive data packet before add route, when subnet mask is 255.255.255.255
-#service wimax_route /system/bin/route add default dev uwbr0
-#        disabled
-#        oneshot
+service dhcpcd_uwbr0 /system/bin/dhcpcd -ABKL
+    disabled
+    oneshot
 
-# Yagya, for ip renew.
-#service wimax_renew /system/bin/dhcpcd -n uwbr0
-#        disabled
-#        oneshot	
+service wimax_route /system/bin/route add default dev uwbr0
+    disabled
+    oneshot
+
+# wimax
+service iprenew_uwbr0 /system/bin/dhcpcd -n
+    disabled
+    oneshot
 
 on property:ril.cdma.data_ready=true
 start pppd_cdma
@@ -319,5 +321,3 @@ service tvouthack /system/bin/tvouthack
 user system
 group graphics
 disabled
-
-

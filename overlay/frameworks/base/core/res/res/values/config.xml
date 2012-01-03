@@ -107,7 +107,7 @@ than the size of the config_autoBrightnessLevels array.
     <!-- An Array of "[Connection name],[ConnectivityManager connection type],
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
-        <!--<item>"wimax,6,6,1"</item>-->
+        <item>"wimax,6,6,1"</item>
         <item>"wifi,1,1,2"</item>
         <item>"mobile,0,0,0"</item>
         <item>"mobile_mms,2,0,3"</item>
@@ -137,16 +137,17 @@ than the size of the config_autoBrightnessLevels array.
     <!-- Regex array of allowable upstream ifaces for tethering - for example if you want
          tethering on a new interface called "foo2" add <item>"foo\\d"</item> to the array -->
    <string-array translatable="false" name="config_tether_upstream_regexs">
+        <item>"uwbr\\d"</item>
         <item>"ppp\\d"</item>
+        <item>"rmnet\\d"</item>
         <item>"eth\\d"</item>
-	<!-- <item>"wimax\\d"</item> -->
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-    <item>"wl0.1"</item>
+        <item>"wl0.1"</item>
         <item>"softap.*"</item> 
     </string-array> 
 
@@ -165,15 +166,18 @@ than the size of the config_autoBrightnessLevels array.
     <bool name="config_animateScreenLights">false</bool>
 
     <!-- Set and Unsets WiMAX -->
-    <!--<bool name="config_wimaxEnabled">true</bool>-->
+    <bool name="config_wimaxEnabled">true</bool>
     <!-- Location of the wimax framwork jar location -->
-    <!--<string name="config_wimaxServiceJarLocation">/vendor/lib/wimax_service.jar</string>-->
+    <string name="config_wimaxServiceJarLocation">/vendor/lib/wimax_service.jar</string>
     <!-- Location of the wimax native library locaiton -->
-    <!--<string name="config_wimaxNativeLibLocation">/vendor/lib/libSECmWiMAXcAPI.so</string>-->
+    <string name="config_wimaxNativeLibLocation">/vendor/lib/libSECmWiMAXcAPI.so</string>
     <!-- Name of the wimax manager class -->
-    <!--<string name="config_wimaxManagerClassname">android.net.wimax.WimaxManager</string>-->
+    <string name="config_wimaxManagerClassname">android.net.wimax.WimaxManager</string>
     <!-- Name of the wimax service class -->
-    <!--<string name="config_wimaxServiceClassname">com.android.server.WimaxService</string>-->
-    <!-- Name of the wimax state tracker clas -->
-    <!--<string name="config_wimaxStateTrackerClassname">android.net.wimax.WimaxStateTracker</string>-->
+    <string name="config_wimaxServiceClassname">com.android.server.WimaxService</string>
+    <!-- Name of the wimax state tracker class -->
+    <string name="config_wimaxStateTrackerClassname">android.net.wimax.WimaxStateTracker</string>
+    <!-- Set to true if the RSSI should always display CDMA signal
+         strength even on EVDO -->
+    <bool name="config_alwaysUseCdmaRssi">true</bool>
 </resources>
