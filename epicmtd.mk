@@ -56,7 +56,8 @@ PRODUCT_COPY_FILES += \
      device/samsung/epicmtd/prebuilt/usr/keychars/melfas_touchkey.kcm.bin:system/usr/keychars/melfas_touchkey.kcm.bin \
      device/samsung/epicmtd/prebuilt/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
      device/samsung/epicmtd/prebuilt/usr/keychars/aries-keypad.kcm.bin:system/usr/keychars/aries-keypad.kcm.bin \
-     device/samsung/epicmtd/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin
+     device/samsung/epicmtd/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+     device/samsung/epicmtd/prebuilt/usr/idc/65537.cypress-touchkey.idc:system/usr/idc/65537.cypress-touchkey.idc
 
 
 # Generated kcm keymaps
