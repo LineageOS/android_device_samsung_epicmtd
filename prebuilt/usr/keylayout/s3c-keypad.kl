@@ -52,7 +52,7 @@ key 42    AT	        WAKE_DROPPED
 key 44    COMMA	        WAKE_DROPPED
 key 45    SPACE	        WAKE_DROPPED
 
-key 56    FOCUS	        WAKE_DROPPED
+key 56    FOCUS
 key 47    PERIOD	WAKE_DROPPED
 key 48    DPAD_UP       WAKE_DROPPED
 key 49    DPAD_LEFT     WAKE_DROPPED
