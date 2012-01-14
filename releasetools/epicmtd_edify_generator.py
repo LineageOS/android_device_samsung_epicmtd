@@ -26,7 +26,7 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
       edify_generator.EdifyGenerator.AssertDevice(self, device)
 
       self.script.append('ui_print("Checking state of BML/MTD...");')
-
+      self.script.append('show_progress(0.15, 5);');
       self.script.append(
             ('package_extract_file("updater.sh", "/tmp/updater.sh");\n'
              'set_perm(0, 0, 0777, "/tmp/updater.sh");'))
@@ -50,7 +50,7 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
              'set_perm(0, 0, 0777, "/tmp/bml_over_mtd.sh");'))
 
       self.script.append('package_extract_file("boot.img", "/tmp/boot.img");')
-      self.script.append('assert(run_program("/tmp/updater.sh") == 0);')
+      self.script.append('assert(run_program("/tmp/updater.sh", "cdma") == 0);')
 
     def RunBackup(self, command):
       edify_generator.EdifyGenerator.RunBackup(self, command)

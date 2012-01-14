@@ -246,22 +246,28 @@ on property:persist.service.slate_mode=0
 write /sys/class/power_supply/battery/slate_test_mode 0
 
 # 3D init
-service pvrsrvinit /system/bin/pvrsrvinit
+service pvrsrvinit /system/vendor/bin/pvrsrvinit
+class core
 user root
 group root
 oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+class main
 socket wpa_eth0 dgram 0660 wifi wifi
 disabled
 oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+class main
 disabled
 oneshot
 
 #service iprenew_eth0 /system/bin/dhcpcd -n
+class main
+
 service pppd_cdma /system/bin/pppd_runner
+class main
 user root
 group radio cache inet misc system
 disabled
@@ -270,6 +276,7 @@ oneshot
 
 # +++++++++++++++++++++++++++++++++++++++++++
 # for Broadcom Bluetooth
+class main
 service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /system/bin/BCM4329B1_002.002.023.0746.0832.hcd /dev/s3c2410_serial0
 user bluetooth
 group bluetooth net_bt_admin
@@ -292,15 +299,18 @@ group system inet
 #end of PCInternet share
 
 service dhcpcd_uwbr0 /system/bin/dhcpcd -ABKL
+    class main
     disabled
     oneshot
 
 service wimax_route /system/bin/route add default dev uwbr0
+    class main
     disabled
     oneshot
 
 # wimax
 service iprenew_uwbr0 /system/bin/dhcpcd -n
+    class main
     disabled
     oneshot
 
@@ -311,10 +321,12 @@ on property:ril.cdma.data_ready=false
 stop pppd_cdma
 
 service tvout /system/bin/tvoutserver
+class main
 user system
 group graphics
 
 service tvouthack /system/bin/tvouthack
+class main
 user system
 group graphics
 disabled

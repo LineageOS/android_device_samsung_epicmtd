@@ -21,18 +21,16 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_SHARED_LIBRARIES := liblog libcutils
-
-ifdef BOARD_V4L2_DEVICE
-    LOCAL_CFLAGS += -DV4L2_DEVICE=\"$(BOARD_V4L2_DEVICE)\"
-endif
+LOCAL_SHARED_LIBRARIES := liblog libcutils libEGL libGLESv1_CM libhardware
+LOCAL_CFLAGS += -DLOG_TAG=\"hwcomposer\"
 
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/../include
 
-LOCAL_SRC_FILES := v4l2_utils.c overlay.cpp
+LOCAL_SRC_FILES := SecHWCUtils.cpp SecHWC.cpp
 
-LOCAL_MODULE := overlay.s5pc110
+LOCAL_MODULE := hwcomposer.s5pc110
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
+
 endif

@@ -67,8 +67,7 @@ PRODUCT_PACKAGES := \
 
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
-	device/samsung/epicmtd/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-	device/samsung/epicmtd/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+	device/samsung/epicmtd/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
@@ -80,10 +79,13 @@ PRODUCT_PACKAGES += \
 
 # Libs
 PRODUCT_PACKAGES += \
+    lights.s5pc110 \
+    audio.primary.s5pc110 \
+    audio_policy.s5pc110 \
+    audio.a2dp.default \
+    hwcomposer.s5pc110 \
     sensors.s5pc110 \
-    libstagefrighthw \
-    libcamera \
-    overlay.s5pc110
+    libstagefrighthw
 
 # update utilities
 PRODUCT_PACKAGES += \
@@ -137,8 +139,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.interfaces.defaultroute=cdma \
     net.cdma.ppp.interface=ppp0 \
     net.connectivity.type=CDMA1 \
-    mobiledata.interfaces=eth0,ppp0,uwbr0 \
-    ro.telephony.ril_class=samsung \
+    mobiledata.interfaces=ppp0,uwbr0 \
+    ro.telephony.ril_class=SamsungRIL \
     ro.ril.samsung_cdma=true
 
 # WiMAX Property setting for checking WiMAX interface
