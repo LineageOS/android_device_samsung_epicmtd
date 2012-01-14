@@ -41,7 +41,7 @@ extern "C" {
 }
 
 
-namespace android {
+namespace android_audio_legacy {
 
 const uint32_t AudioHardware::inputSamplingRates[] = {
         8000, 11025, 16000, 22050, 44100
@@ -669,18 +669,18 @@ const char *AudioHardware::getOutputRouteFromDevice(uint32_t device)
     case AudioSystem::DEVICE_OUT_EARPIECE:
         return "RCV";
     case AudioSystem::DEVICE_OUT_SPEAKER:
-        if (mMode == AudioSystem::MODE_RINGTONE) return "SPK";
+        if (mMode == AudioSystem::MODE_RINGTONE) return "RING_SPK";
         else return "SPK";
     case AudioSystem::DEVICE_OUT_WIRED_HEADPHONE:
-        if (mMode == AudioSystem::MODE_RINGTONE) return "HP_NO_MIC";
+        if (mMode == AudioSystem::MODE_RINGTONE) return "RING_NO_MIC";
         else return "HP_NO_MIC";
     case AudioSystem::DEVICE_OUT_WIRED_HEADSET:
-        if (mMode == AudioSystem::MODE_RINGTONE) return "HP";
+        if (mMode == AudioSystem::MODE_RINGTONE) return "RING_HP";
         else return "HP";
     case (AudioSystem::DEVICE_OUT_SPEAKER|AudioSystem::DEVICE_OUT_WIRED_HEADPHONE):
     case (AudioSystem::DEVICE_OUT_SPEAKER|AudioSystem::DEVICE_OUT_WIRED_HEADSET):
-        if (mMode == AudioSystem::MODE_RINGTONE) return "HP";
-        else return "HP";
+        if (mMode == AudioSystem::MODE_RINGTONE) return "RING_SPK_HP";
+        else return "SPK_HP";
     case AudioSystem::DEVICE_OUT_BLUETOOTH_SCO:
     case AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_HEADSET:
     case AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_CARKIT:
@@ -1963,4 +1963,4 @@ extern "C" AudioHardwareInterface* createAudioHardware(void) {
     return new AudioHardware();
 }
 
-}; // namespace android
+}; // namespace android_audio_legacy
