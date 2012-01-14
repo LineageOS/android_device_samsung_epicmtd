@@ -134,15 +134,6 @@ than the size of the config_autoBrightnessLevels array.
           <item>"usb0"</item>
     </string-array>
 
-    <!-- Regex array of allowable upstream ifaces for tethering - for example if you want
-         tethering on a new interface called "foo2" add <item>"foo\\d"</item> to the array -->
-   <string-array translatable="false" name="config_tether_upstream_regexs">
-        <item>"uwbr\\d"</item>
-        <item>"ppp\\d"</item>
-        <item>"rmnet\\d"</item>
-        <item>"eth\\d"</item>
-    </string-array>
-
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
@@ -151,9 +142,6 @@ than the size of the config_autoBrightnessLevels array.
         <item>"softap.*"</item> 
     </string-array> 
 
-
-    <!-- Boolean indicating if we require the use of DUN on mobile for tethering -->
-      <bool translatable="false" name="config_tether_dun_required">false</bool>  
 
     <!-- If this value is true, The mms content-disposition field is supported correctly. If false, Content-disposition fragments are ignored -->
     <bool name="config_mms_content_disposition_support">false</bool>
@@ -180,4 +168,5 @@ than the size of the config_autoBrightnessLevels array.
     <!-- Set to true if the RSSI should always display CDMA signal
          strength even on EVDO -->
     <bool name="config_alwaysUseCdmaRssi">true</bool>
+
 </resources>

@@ -14,6 +14,9 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
+COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE
+COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_PIXEL_FORMAT_YV12
+COMMON_GLOBAL_CFLAGS += -DMISSING_GRALLOC_BUFFERS
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -38,13 +41,16 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetoo
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetools/epicmtd_img_from_target_files
 
 # Camera defines
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 ifeq ($(USE_CAMERA_STUB),false)
 BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 # OpenGL stuff
+USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/epicmtd/prebuilt/etc/egl.cfg
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/aries-common/recovery/graphics.c
+BOARD_USE_SKIA_LCDTEXT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -53,8 +59,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Video Devices
 BOARD_USES_OVERLAY := true
 BOARD_V4L2_DEVICE := /dev/video1
-BOARD_CAMERA_DEVICE := /dev/video0
-BOARD_SECOND_CAMERA_DEVICE := /dev/video2
+#BOARD_CAMERA_DEVICE := /dev/video0
+#BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
 # Max image/partition sizes
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
@@ -73,7 +79,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/epicmtd/kernel
 
 # WIFI defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION := VER_0_6_X
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_FW_STA_PATH := "/vendor/firmware/fw_bcm4329.bin"
 WIFI_DRIVER_FW_AP_PATH := "/vendor/firmware/fw_bcm4329_apsta.bin"
 BOARD_WLAN_DEVICE := bcm4329
