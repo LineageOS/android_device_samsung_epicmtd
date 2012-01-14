@@ -40,7 +40,6 @@ fi
 DIRS="
 vendor/bin
 bin
-cameradata
 etc/wifi
 lib/egl
 lib/hw
@@ -62,21 +61,11 @@ etc/wimaxfw.bin
 etc/wimaxloader.bin
 
 bin/tvoutserver
-cameradata/datapattern_420sp.yuv
-cameradata/datapattern_front_420sp.yuv
 lib/libActionShot.so
-lib/libcamera.so
-lib/libarccamera.so
-lib/libcamera_client.so
-lib/libcamerafirmwarejni.so
-lib/libcameraservice.so
-lib/libCamera_gingerbread.so
 lib/libCaMotion.so
 lib/libcaps.so
 lib/libPanoraMax1.so
 lib/libPlusMe.so
-lib/libseccamera.so
-lib/libseccameraadaptor.so
 lib/libsecjpegencoder.so
 lib/libtvout_jni.so
 lib/libtvout.so
@@ -238,20 +227,11 @@ PRODUCT_COPY_FILES += \\
 #
 PRODUCT_COPY_FILES += \\
     vendor/samsung/__DEVICE__/proprietary/bin/tvoutserver:system/bin/tvoutserver \\
-    vendor/samsung/__DEVICE__/proprietary/cameradata/datapattern_420sp.yuv:system/cameradata/datapattern_420sp.yuv \\
-    vendor/samsung/__DEVICE__/proprietary/cameradata/datapattern_front_420sp.yuv:system/cameradata/datapattern_front_420sp.yuv \\
     vendor/samsung/__DEVICE__/proprietary/lib/libActionShot.so:system/lib/libActionShot.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libcamera.so:system/lib/libsamsungcamera.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libarccamera.so:system/lib/libarccamera.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libcamera_client.so:system/lib/libcamera_client.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libcamerafirmwarejni.so:system/lib/libcamerafirmwarejni.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libcameraservice.so:system/lib/libcameraservice.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libCaMotion.so:system/lib/libCaMotion.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libcaps.so:system/lib/libcaps.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libPanoraMax1.so:system/lib/libPanoraMax1.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libPlusMe.so:system/lib/libPlusMe.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libseccamera.so:system/lib/libseccamera.so \\
-    vendor/samsung/__DEVICE__/proprietary/lib/libseccameraadaptor.so:system/lib/libseccameraadaptor.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libsecjpegencoder.so:system/lib/libsecjpegencoder.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libtvout.so:system/lib/libtvout.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libtvout_jni.so:system/lib/libtvout_jni.so \\
