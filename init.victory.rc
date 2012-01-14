@@ -246,7 +246,8 @@ on property:persist.service.slate_mode=0
 write /sys/class/power_supply/battery/slate_test_mode 0
 
 # 3D init
-service pvrsrvinit /system/bin/pvrsrvinit
+service pvrsrvinit /system/vendor/bin/pvrsrvinit
+class core
 user root
 group root
 oneshot
