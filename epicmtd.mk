@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
 
 # Libs
 PRODUCT_PACKAGES += \
+    hwcomposer.s5pc110 \
     sensors.s5pc110 \
     libstagefrighthw \
     libcamera \
