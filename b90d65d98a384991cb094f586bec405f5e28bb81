@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX///mQ\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2260
+      },
+      "writtenOn": "2012-01-17T23:38:51Z",
+      "side": 1,
+      "message": "Remove, no longer needed with I6655a76c.",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
