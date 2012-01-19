@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX///b4\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 895
+      },
+      "writtenOn": "2012-01-19T08:04:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX///mQ\u003d",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX///e4\u003d",
         "filename": "BoardConfig.mk",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX///b8\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 895
+      },
+      "writtenOn": "2012-01-19T08:04:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX///e4\u003d",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX///ew\u003d",
         "filename": "cm.mk",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2012-01-19T02:07:26Z",
       "side": 1,
       "message": "This should be something like epicmtd as well, not GN-GDMA, that\u0027s the toro\u0027s release name.",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///b0\u003d",
+        "filename": "cm.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 895
+      },
+      "writtenOn": "2012-01-19T08:04:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX///ew\u003d",
       "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
