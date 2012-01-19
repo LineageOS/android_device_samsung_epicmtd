@@ -16,6 +16,23 @@
       "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///e4\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1972
+      },
+      "writtenOn": "2012-01-19T01:08:17Z",
+      "side": 1,
+      "message": "Why not ../aries-common/recovery/graphics.c",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
