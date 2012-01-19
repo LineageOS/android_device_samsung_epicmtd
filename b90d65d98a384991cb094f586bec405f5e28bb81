@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX///bM\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 895
+      },
+      "writtenOn": "2012-01-19T10:11:36Z",
+      "side": 1,
+      "message": "Turns out, it was because the Makefile doesn\u0027t call it from device/samsung/epicmtd, it\u0027s called from bootable/recovery/minui/.",
+      "parentUuid": "AAAAPX///e4\u003d",
+      "revId": "b90d65d98a384991cb094f586bec405f5e28bb81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX///ew\u003d",
         "filename": "cm.mk",
         "patchSetId": 5
