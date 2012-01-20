@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX///Xs\u003d",
+        "filename": "init.victory.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2012-01-20T05:18:40Z",
+      "side": 1,
+      "message": "please comment that",
+      "revId": "3181ba31f9bd5b2e3460cd6c26a27c612c809ec8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
