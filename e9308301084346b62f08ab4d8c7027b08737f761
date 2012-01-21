@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX///Pg\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 895
+      },
+      "writtenOn": "2012-01-21T08:36:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX///Po\u003d",
+      "revId": "e9308301084346b62f08ab4d8c7027b08737f761",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX///TY\u003d",
         "filename": "cm.mk",
         "patchSetId": 7
