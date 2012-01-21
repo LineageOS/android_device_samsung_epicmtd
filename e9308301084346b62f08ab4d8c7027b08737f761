@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX///TY\u003d",
+        "filename": "cm.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1972
+      },
+      "writtenOn": "2012-01-21T01:36:21Z",
+      "side": 1,
+      "message": "Nitpick: PRODUCT_BRAND should be set to samsung (lowercase) to match defaults. This occasionally causes problems with programs such as netflix.",
+      "revId": "e9308301084346b62f08ab4d8c7027b08737f761",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///TU\u003d",
+        "filename": "cm.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1972
+      },
+      "writtenOn": "2012-01-21T01:36:21Z",
+      "side": 1,
+      "message": "This could be set to all lowercase too, to match defaults.",
+      "revId": "e9308301084346b62f08ab4d8c7027b08737f761",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
