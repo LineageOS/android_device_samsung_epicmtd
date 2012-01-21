@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPX///Po\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2012-01-21T07:55:10Z",
+      "side": 1,
+      "message": "These are not needed because we are using Nexus S\u0027 PowerVR ICS libs. \nWe don\u0027t need those anymore.\nCOMMON_GLOBAL_CFLAGS +\u003d -DMISSING_EGL_EXTERNAL_IMAGE\nCOMMON_GLOBAL_CFLAGS +\u003d -DMISSING_EGL_PIXEL_FORMAT_YV12\nCOMMON_GLOBAL_CFLAGS +\u003d -DMISSING_GRALLOC_BUFFERS",
+      "revId": "e9308301084346b62f08ab4d8c7027b08737f761",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX///TY\u003d",
         "filename": "cm.mk",
         "patchSetId": 7
