@@ -32,7 +32,8 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
   device/samsung/epicmtd/ueventd.victory.rc:root/ueventd.victory.rc \
   device/samsung/epicmtd/lpm.rc:root/lpm.rc \
-  device/samsung/epicmtd/init.victory.rc:root/init.victory.rc
+  device/samsung/epicmtd/init.victory.rc:root/init.victory.rc \
+  device/samsung/epicmtd/init.victory.usb.rc:root/init.victory.usb.rc
 
 # kernel modules
 PRODUCT_COPY_FILES += \
@@ -106,6 +107,12 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+
+# Enable "Android debugging" in Settings menu.
+# Enable USB mass storage and adb at boot.
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mass_storage,adb
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
