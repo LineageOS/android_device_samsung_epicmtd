@@ -90,7 +90,7 @@ PRODUCT_PACKAGES += \
 	tvouthack
 # apns config file
 PRODUCT_COPY_FILES += \
-        device/samsung/epicmtd/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
+    device/samsung/epicmtd/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -106,6 +106,9 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+#camera profile
+PRODUCT_COPY_FILES += \   
+    device/samsung/epicmtd/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
