@@ -41,7 +41,8 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_COPY_FILES += \
-     device/samsung/epicmtd/prebuilt/bin/pppd_runner:system/bin/pppd_runner
+     device/samsung/epicmtd/prebuilt/bin/pppd_runner:system/bin/pppd_runner \
+     device/samsung/epicmtd/prebuilt/etc/ppp/ip-up:system/etc/ppp/ip-up
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -139,9 +140,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cdma.home.operator.alpha=Sprint \
     net.cdma.pppd.authtype=require-pap \
     net.cdma.pppd.user=user[SPACE]SprintNextel \
-    net.cdma.datalinkinterface=/dev/ttyCDMA0 \
     net.interfaces.defaultroute=cdma \
-    net.cdma.ppp.interface=ppp0 \
     net.connectivity.type=CDMA1 \
     mobiledata.interfaces=ppp0,uwbr0 \
     ro.telephony.ril_class=SamsungRIL \
