@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//+0A\u003d",
+        "filename": "libaudio/AudioHardware.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2012-02-05T01:49:41Z",
+      "side": 1,
+      "message": "replace volume function here",
+      "revId": "63d7ba83f33ae457a7de917b24fcad2d428d9092",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//+z8\u003d",
+        "filename": "libaudio/AudioHardware.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2012-02-05T01:49:41Z",
+      "side": 1,
+      "message": "fix audio path",
+      "revId": "63d7ba83f33ae457a7de917b24fcad2d428d9092",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
