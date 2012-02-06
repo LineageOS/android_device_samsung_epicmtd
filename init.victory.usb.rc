@@ -1,6 +1,27 @@
+# It's not proper to set this after updating sys.usb.state (init.rc),
+# however it should be OK as it will execute before any other "on property"
+# triggers.
+on property:sys.usb.config=none
+    write /sys/devices/virtual/usb_composite/rndis/enable 0
+
 on property:sys.usb.config=mass_storage
     setprop sys.usb.state $sys.usb.config
 
 on property:sys.usb.config=mass_storage,adb
     start adbd
     setprop sys.usb.state $sys.usb.config
+
+on property:sys.usb.config=rndis
+    write /sys/devices/virtual/usb_composite/rndis/enable 1
+    setprop sys.usb.state $sys.usb.config
+
+# The rndis function is enabled in adb USB gadget mode, don't need to
+# enable rndis separately here.
+on property:sys.usb.config=rndis,adb
+    start adbd
+    setprop sys.usb.state $sys.usb.config
+
+# Need to bring usb0 up after Tethering is initialized so that it learns
+# about the usb0 interface.
+on property:sys.boot_completed=1
+    exec /system/bin/netcfg usb0 up
