@@ -56,11 +56,7 @@ FILES="
 bin/BCM4329B1_002.002.023.0746.0832.hcd
 
 etc/wifi/nvram_net.txt
-etc/wimax_boot.bin
-etc/wimaxfw.bin
-etc/wimaxloader.bin
 
-bin/pppd_runner
 bin/rild
 lib/libril.so
 lib/libsec-ril40.so
@@ -83,16 +79,30 @@ vendor/lib/libpvrANDROID_WSEGL.so
 vendor/lib/libglslcompiler.so
 vendor/lib/libPVRScopeServices.so
 vendor/lib/libusc.so
-vendor/firmware/samsung_mfc_fw.bin 
+vendor/firmware/samsung_mfc_fw.bin
+firmware/CE147F00.bin
+firmware/CE147F01.bin
+firmware/CE147F02.bin
+firmware/CE147F03.bin
+vendor/firmware/CE147F02.bin
+cameradata/datapattern_420sp.yuv
+cameradata/datapattern_front_420sp.yuv
 
 bin/geomagneticd
 bin/orientationd
 lib/libsensor_yamaha_test.so
-lib/hw/sensors.default.so
+lib/hw/sensors.s5pc110.so
 
 lib/hw/copybit.s5pc110.so
 lib/hw/lights.s5pc110.so
 vendor/lib/hw/gralloc.s5pc110.so
+
+etc/wimax_boot.bin
+etc/wimaxfw.bin
+etc/wimaxloader.bin
+vendor/lib/libSECmWiMAXcAPI.so
+lib/libWiMAXNative.so
+vendor/lib/wimax_service.jar
 
 bin/playlpm
 bin/charging_mode
@@ -128,6 +138,12 @@ for FILE in $FILES; do
 		adb pull system/$FILE ../../../vendor/samsung/$DEVICE/proprietary/$FILE
 	fi
 done
+
+adb pull system/app/SprintMenu.apk ../../../vendor/samsung/$DEVICE/proprietary/SprintMenu.apk
+adb pull system/app/SystemUpdateUI.apk ../../../vendor/samsung/$DEVICE/proprietary/SystemUpdateUI.apk
+adb pull system/app/WiMAXSettings.apk ../../../vendor/samsung/$DEVICE/proprietary/WiMAXSettings.apk
+adb pull system/app/WiMAXHiddenMenu.apk ../../../vendor/samsung/$DEVICE/proprietary/WiMAXHiddenMenu.apk
+
 if [ "$ZIP" ]; then rm -rf tmp ; fi
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/samsung/$DEVICE/$DEVICE-vendor-blobs.mk
@@ -158,39 +174,42 @@ PRODUCT_COPY_FILES += \\
 # Wifi
 #
 PRODUCT_COPY_FILES += \\
-    vendor/samsung/__DEVICE__/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \\
-    vendor/samsung/__DEVICE__/proprietary/etc/wimax_boot.bin:system/etc/wimax_boot.bin \\
-    vendor/samsung/__DEVICE__/proprietary/etc/wimaxfw.bin:system/etc/wimaxfw.bin \\
-    vendor/samsung/__DEVICE__/proprietary/etc/wimaxloader.bin:system/etc/wimaxloader.bin
+    vendor/samsung/__DEVICE__/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt
 
 
 #
 # Display (3D)
 #
 PRODUCT_COPY_FILES += \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/bin/pvrsrvinit:system/vendor/bin/pvrsrvinit \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so:system/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/hw/gralloc.s5pc110.so:system/vendor/lib/hw/gralloc.s5pc110.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libglslcompiler.so:system/vendor/lib/libglslcompiler.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libsrv_init.so:system/vendor/lib/libsrv_init.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libsrv_um.so:system/vendor/lib/libsrv_um.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libusc.so:system/vendor/lib/libusc.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/bin/pvrsrvinit:system/vendor/bin/pvrsrvinit \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/firmware/samsung_mfc_fw.bin:system/vendor/firmware/samsung_mfc_fw.bin \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so:system/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so \\
     vendor/samsung/__DEVICE__/proprietary/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so:system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so \\
     vendor/samsung/__DEVICE__/proprietary/vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so:system/vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libsrv_um.so:system/vendor/lib/libsrv_um.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libsrv_init.so:system/vendor/lib/libsrv_init.so \\
     vendor/samsung/__DEVICE__/proprietary/vendor/lib/libIMGegl.so:system/vendor/lib/libIMGegl.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libPVRScopeServices.so:system/vendor/lib/libPVRScopeServices.so \\
     vendor/samsung/__DEVICE__/proprietary/vendor/lib/libpvr2d.so:system/vendor/lib/libpvr2d.so \\
     vendor/samsung/__DEVICE__/proprietary/vendor/lib/libpvrANDROID_WSEGL.so:system/vendor/lib/libpvrANDROID_WSEGL.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libglslcompiler.so:system/vendor/lib/libglslcompiler.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libPVRScopeServices.so:system/vendor/lib/libPVRScopeServices.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libusc.so:system/vendor/lib/libusc.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/lib/hw/gralloc.s5pc110.so:system/vendor/lib/hw/gralloc.s5pc110.so \\
-    vendor/samsung/__DEVICE__/proprietary/vendor/firmware/samsung_mfc_fw.bin:system/vendor/firmware/samsung_mfc_fw.bin
-
+    vendor/samsung/__DEVICE__/proprietary/firmware/CE147F00.bin:system/firmware/CE147F00.bin \\
+    vendor/samsung/__DEVICE__/proprietary/firmware/CE147F01.bin:system/firmware/CE147F01.bin \\
+    vendor/samsung/__DEVICE__/proprietary/firmware/CE147F02.bin:system/firmware/CE147F02.bin \\
+    vendor/samsung/__DEVICE__/proprietary/firmware/CE147F03.bin:system/firmware/CE147F03.bin \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/firmware/CE147F02.bin:system/vendor/firmware/CE147F02.bin \\
+    vendor/samsung/__DEVICE__/proprietary/cameradata/datapattern_420sp.yuv:system/cameradata/datapattern_420sp.yuv \\
+    vendor/samsung/__DEVICE__/proprietary/cameradata/datapattern_front_420sp.yuv:system/cameradata/datapattern_front_420sp.yuv 
 #
 # Sensors, Lights etc
 #
 PRODUCT_COPY_FILES += \\
     vendor/samsung/__DEVICE__/proprietary/bin/geomagneticd:system/bin/geomagneticd \\
     vendor/samsung/__DEVICE__/proprietary/bin/orientationd:system/bin/orientationd \\
-    vendor/samsung/__DEVICE__/proprietary/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so \\
+    vendor/samsung/__DEVICE__/proprietary/lib/hw/sensors.s5pc110.so:system/lib/hw/sensors.s5pc110.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libsensor_yamaha_test.so:system/lib/libsensor_yamaha_test.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/hw/copybit.s5pc110.so:system/lib/hw/copybit.s5pc110.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/hw/lights.s5pc110.so:system/lib/hw/lights.s5pc110.so
@@ -205,7 +224,6 @@ PRODUCT_COPY_FILES += \\
 # RIL
 #
 PRODUCT_COPY_FILES += \\
-    vendor/samsung/__DEVICE__/proprietary/bin/pppd_runner:system/bin/pppd_runner \\
     vendor/samsung/__DEVICE__/proprietary/bin/rild:system/bin/rild \\
     vendor/samsung/__DEVICE__/proprietary/lib/libsec-ril40.so:system/lib/libsec-ril40.so \\
     vendor/samsung/__DEVICE__/proprietary/lib/libsecril-client.so:system/lib/libsecril-client.so \\
@@ -218,6 +236,30 @@ PRODUCT_COPY_FILES += \\
     vendor/samsung/__DEVICE__/proprietary/vendor/bin/gpsd:system/vendor/bin/gpsd \\
     vendor/samsung/__DEVICE__/proprietary/etc/gps.conf:system/etc/gps.conf \\
     vendor/samsung/__DEVICE__/proprietary/lib/hw/gps.s5pc110.so:system/lib/hw/gps.s5pc110.so
+
+#
+# WiMAX
+#
+PRODUCT_COPY_FILES += \\
+    vendor/samsung/__DEVICE__/proprietary/lib/libWiMAXNative.so:system/lib/libWiMAXNative.so \\
+    vendor/samsung/__DEVICE__/proprietary/etc/wimaxfw.bin:system/etc/wimaxfw.bin \\
+    vendor/samsung/__DEVICE__/proprietary/etc/wimaxloader.bin:system/etc/wimaxloader.bin \\
+    vendor/samsung/__DEVICE__/proprietary/etc/wimax_boot.bin:system/etc/wimax_boot.bin \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/libSECmWiMAXcAPI.so:system/vendor/lib/libSECmWiMAXcAPI.so \\
+    vendor/samsung/__DEVICE__/proprietary/vendor/lib/wimax_service.jar:system/vendor/lib/wimax_service.jar \\
+    vendor/samsung/__DEVICE__/proprietary/app/WiMAXSettings.apk:system/app/WiMAXSettings.apk \\
+    vendor/samsung/__DEVICE__/proprietary/app/SprintMenu.apk:system/app/SprintMenu.apk \\
+    vendor/samsung/__DEVICE__/proprietary/app/WiMAXHiddenMenu.apk:system/app/WiMAXHiddenMenu.apk \\
+    vendor/samsung/__DEVICE__/proprietary/app/SystemUpdateUI.apk:system/app/SystemUpdateUI.apk
+    
+
+PRODUCT_PACKAGES += \\
+                WiMAXSettings \\
+                SprintMenu \\
+                WiMAXHiddenMenu \\
+                SystemUpdateUI
+
+DEVICE_PACKAGE_OVERLAYS := device/samsung/__DEVICE__/overlay
 
 #
 # Files for battery charging screen
