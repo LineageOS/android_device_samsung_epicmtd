@@ -163,7 +163,6 @@ than the size of the config_autoBrightnessLevels array.
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
           <item>"usb0"</item>
-	  <item>"rndis0"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
