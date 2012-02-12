@@ -35,6 +35,7 @@ static char const RED_LED_DIR[]   = "/sys/class/leds/red";
 static char const BLUE_LED_DIR[]  = "/sys/class/leds/blue";
 static char const LCD_FILE[]      = "/sys/class/backlight/s5p_bl/brightness";
 static char const KEYBOARD_FILE[] = "/sys/devices/platform/s3c-keypad/brightness";
+static char const BUTTONS_FILE[]  = "/sys/class/sec/t_key/brightness";
 
 static struct led_state {
 	unsigned int enabled;
@@ -245,6 +246,22 @@ static int set_light_keyboard(struct light_device_t *dev,
 	return res;
 }
 
+static int set_light_buttons(struct light_device_t *dev,
+			struct light_state_t const *state)
+{
+	int touch_led_control = !!(state->color & 0x00ffffff);
+	int res;
+
+	LOGD("set_light_buttons: color=%#010x, tlc=%u.", state->color,
+	     touch_led_control);
+
+	pthread_mutex_lock(&g_lock);
+	res = write_int(BUTTONS_FILE, touch_led_control);
+	pthread_mutex_unlock(&g_lock);
+
+	return res;
+}
+
 static int close_lights(struct light_device_t *dev)
 {
 	LOGV("close_light is called");
@@ -266,6 +283,8 @@ static int open_lights(const struct hw_module_t *module, char const *name,
 		set_light = set_light_backlight;
 	else if (0 == strcmp(LIGHT_ID_KEYBOARD, name))
 		set_light = set_light_keyboard;
+	else if (0 == strcmp(LIGHT_ID_BUTTONS, name))
+		set_light = set_light_buttons;
 	else if (0 == strcmp(LIGHT_ID_BATTERY, name))
 		set_light = set_light_battery;
 	else if (0 == strcmp(LIGHT_ID_NOTIFICATIONS, name))
