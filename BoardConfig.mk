@@ -81,7 +81,8 @@ WIFI_DRIVER_MODULE_NAME := "bcm4329"
 WIFI_DRIVER_MODULE_ARG := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/system/etc/wifi/nvram_net.txt dhd_watchdog_ms=10 dhd_poll=1"
 
 # USB MTP / UMS
-SAMSUNG_USB_MTP_DEVICE := true
+
+BOARD_MTP_DEVICE := "/dev/usb_mtp_gadget"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
 
 # Recovery

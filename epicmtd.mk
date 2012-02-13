@@ -120,7 +120,7 @@ PRODUCT_COPY_FILES += \
 # Enable USB mass storage (and adb) at boot.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
     persist.service.adb.enable=1 \
-    persist.sys.usb.config=mass_storage
+    persist.sys.usb.config=mass_storage,mtp
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
