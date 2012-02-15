@@ -157,8 +157,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=eth0 \
-       wifi.supplicant_scan_interval=20 \
-       dalvik.vm.heapsize=32m
+       wifi.supplicant_scan_interval=20
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
@@ -186,6 +185,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     device/samsung/epicmtd/recovery.bin:recovery.bin
+
+# dalvik.vm.heapstartsize=5m
+# dalvik.vm.heapgrowthlimit=48m
+# dalvik.vm.heapsize=128m
+$(call inherit-product, frameworks/base/build/phone-hdpi-dalvik-heap.mk)
 
 # copy the filesystem converter
 PRODUCT_COPY_FILES += \
