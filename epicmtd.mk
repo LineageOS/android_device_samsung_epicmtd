@@ -91,9 +91,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libs3cjpeg \
     camera.s5pc110 
+
 # tvout 
 PRODUCT_PACKAGES += \
 	tvouthack
+
+# torch
+PRODUCT_PACKAGES += \
+	Torch
+
 # apns config file
 PRODUCT_COPY_FILES += \
     device/samsung/epicmtd/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
