@@ -12,10 +12,10 @@ BOARD_USES_LIBSECRIL_STUB := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true
-ANDROID_ARM_LINKER := true
+#ANDROID_ARM_LINKER := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -43,6 +43,7 @@ USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/epicmtd/prebuilt/etc/egl.cfg
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/epicmtd/recovery/graphics.c
 BOARD_USE_SKIA_LCDTEXT := true
+BOARD_USES_HGL := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
