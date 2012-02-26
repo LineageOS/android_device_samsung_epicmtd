@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//9fE\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2451
+      },
+      "writtenOn": "2012-02-26T05:50:46Z",
+      "side": 1,
+      "message": "What exactly is the \"Google way\"?\nHave you measured exactly what kind of size difference this is?",
+      "revId": "d1fb44d8dc34c5fde8ef38f6119447d2749bf79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//9fA\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2451
+      },
+      "writtenOn": "2012-02-26T05:50:46Z",
+      "side": 1,
+      "message": "What does this do?",
+      "revId": "d1fb44d8dc34c5fde8ef38f6119447d2749bf79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//9e8\u003d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2451
+      },
+      "writtenOn": "2012-02-26T05:50:46Z",
+      "side": 1,
+      "message": "Please describe what this does.",
+      "revId": "d1fb44d8dc34c5fde8ef38f6119447d2749bf79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
