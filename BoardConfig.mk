@@ -64,6 +64,12 @@ BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_KERNEL_BASE := 0x02e00000
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 BOARD_KERNEL_PAGESIZE := 4096
+
+# Define kernel config for inline building
+TARGET_KERNEL_CONFIG := cyanogenmod_epicmtd_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/victory/Kernel/
+
+# Fallback
 TARGET_PREBUILT_KERNEL := device/samsung/epicmtd/kernel
 
 # WIFI defines
