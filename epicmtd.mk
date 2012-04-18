@@ -35,10 +35,6 @@ PRODUCT_COPY_FILES += \
   device/samsung/epicmtd/init.victory.rc:root/init.victory.rc \
   device/samsung/epicmtd/init.victory.usb.rc:root/init.victory.usb.rc
 
-# kernel modules
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/samsung/epicmtd/modules,system/lib/modules)
-
 # RIL
 PRODUCT_COPY_FILES += \
      device/samsung/epicmtd/prebuilt/bin/pppd_runner:system/bin/pppd_runner \
@@ -172,15 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# We are using a prebuilt kernel for now, to ease building. This will be changed later.
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/epicmtd/kernel
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
     device/samsung/epicmtd/recovery.bin:recovery.bin
 
 # dalvik.vm.heapstartsize=5m

@@ -1,0 +1,8 @@
+[
+ {
+   "repository": "android_kernel_samsung_victory",
+   "target_path": "kernel/samsung/epicmtd",
+   "branch": "ics"
+ }
+]
+
