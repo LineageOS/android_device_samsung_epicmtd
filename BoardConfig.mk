@@ -66,7 +66,7 @@ BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := tuna_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_epicmtd_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/epicmtd
 
 # Fallback
