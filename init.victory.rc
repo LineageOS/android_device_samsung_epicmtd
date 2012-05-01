@@ -227,6 +227,10 @@ on boot
   chown system system /dev/ttyGS0
   chown system system /dev/dun
 
+  # EpicParts: Disable Touchkey Lights
+  chown root system /sys/devices/virtual/sec/t_key/touchleds_disabled
+  chmod 0664 /sys/devices/virtual/sec/t_key/touchleds_disabled
+
   # Set keypad delays to recommended values.
   write /sys/devices/platform/s3c-keypad/column_delay 5
   write /sys/devices/platform/s3c-keypad/timer_delay  5
