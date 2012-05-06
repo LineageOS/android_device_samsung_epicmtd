@@ -315,6 +315,15 @@ service pppd_cdma /system/bin/pppd_runner
   disabled
   oneshot
 
+service bdaddr /system/bin/bdaddr_read
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:init.svc.bootanim=running
+    start bdaddr
+
 # for Broadcom Bluetooth
   service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /system/bin/BCM4329B1_002.002.023.0746.0832.hcd /dev/s3c2410_serial0
     class main
