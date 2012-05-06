@@ -83,10 +83,15 @@ PRODUCT_PACKAGES += \
 	bml_over_mtd \
 	setup_fs
 
+# Bluetooth MAC Address
+PRODUCT_PACKAGES += \
+	bdaddr_read
+
 # Camera
 PRODUCT_PACKAGES += \
     libs3cjpeg \
-    camera.s5pc110 
+    camera.s5pc110
+
 # tvout 
 PRODUCT_PACKAGES += \
 	tvouthack
