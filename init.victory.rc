@@ -87,6 +87,9 @@ on boot
   setprop status.battery.level_raw  50
   setprop status.battery.level_scale 9
 
+  # Set our own bdaddr path
+  setprop ro.bt.bdaddr_path /data/bdaddr
+
   # Phone
   setprop ro.telephony.call_ring.multiple 0
 
@@ -256,6 +259,9 @@ on property:ril.cdma.data_state=1
 on property:ril.cdma.data_state=0
   stop pppd_cdma
 
+on property:ril.cdma.data_state=1
+  start bdaddr
+
 on post-fs-data
   # Create data/gps for GPS daemon
   mkdir /data/gps 771 gps system
@@ -314,6 +320,12 @@ service pppd_cdma /system/bin/pppd_runner
   group radio cache inet misc system
   disabled
   oneshot
+
+service bdaddr /system/bin/bdaddr_read
+    class main
+    user root
+    disabled
+    oneshot
 
 # for Broadcom Bluetooth
   service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /system/bin/BCM4329B1_002.002.023.0746.0832.hcd /dev/s3c2410_serial0
