@@ -95,6 +95,12 @@ PRODUCT_PACKAGES += \
 # tvout 
 PRODUCT_PACKAGES += \
 	tvouthack
+
+# Device-specific packages
+PRODUCT_PACKAGES += \
+    EpicParts
+
+
 # apns config file
 PRODUCT_COPY_FILES += \
         device/samsung/epicmtd/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
