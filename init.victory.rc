@@ -56,11 +56,11 @@ on post-fs
   chown system input /sys/class/input/input2/delay
   chown system input /sys/class/input/input2/wake
 
-  chown system input /sys/class/input/input3/enable
-  chown system input /sys/class/input/input3/delay
-  chown system input /sys/class/input/input3/wake
+  chown compass input /sys/class/input/input3/offsets
 
-  chown compass input /sys/class/input/input4/offsets
+  chown system input /sys/class/input/input4/enable
+  chown system input /sys/class/input/input4/delay
+  chown system input /sys/class/input/input4/wake
 
   chown system input /sys/class/input/input5/enable
   chown system input /sys/class/input/input5/delay
@@ -172,7 +172,7 @@ on boot
   chown radio radio /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd
   chown radio radio /sys/class/mdnieset_outdoor/switch_mdnieset_outdoor/mdnieset_outdoor_file_cmd
 
-  chown radio system /sys/devices/platform/s3cfb/spi_gpio.3/spi3.0/backlight/s5p_bl/brightness
+  chown system system /sys/class/backlight/s5p_bl/brightness
   chown radio system /sys/devices/platform/s3cfb/lcd_power
 
   # Change ownerships for touchkey
@@ -361,6 +361,7 @@ service orientationd /system/bin/orientationd
   class late_start
   user compass
   group system input
+  disabled
 
 service geomagneticd /system/bin/geomagneticd
   class late_start
