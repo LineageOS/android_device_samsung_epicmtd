@@ -31,7 +31,7 @@ on post-fs
   exec /system/xbin/busybox mknod -m 0660 /dev/swmxctl c 234 0
   exec /system/xbin/busybox mknod -m 0660 /dev/uwibro c 233 0
   chown system system /dev/swmxctl
-  chown system system /dev/uwibro
+  exec /system/xbin/busybox chown system.system /dev/uwibro
 
   # For sensor control
   chown system input /sys/class/input/input0/enable
@@ -230,6 +230,7 @@ on boot
   # EpicParts: Disable Touchkey Lights
   chown root system /sys/devices/virtual/sec/t_key/touchleds_disabled
   chmod 0664 /sys/devices/virtual/sec/t_key/touchleds_disabled
+
 
   # Set keypad delays to recommended values.
   write /sys/devices/platform/s3c-keypad/column_delay 5
