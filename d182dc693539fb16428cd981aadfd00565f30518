@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3///NY\u003d",
+        "filename": "overlay/packages/apps/Phone/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2890
+      },
+      "writtenOn": "2012-06-03T07:52:30Z",
+      "side": 1,
+      "message": "maybe rename to \"enable_mwinotify_option\" (add the \"y\")",
+      "revId": "d182dc693539fb16428cd981aadfd00565f30518",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
