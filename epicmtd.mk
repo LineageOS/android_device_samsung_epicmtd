@@ -91,7 +91,8 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libs3cjpeg \
-    camera.s5pc110
+    camera.s5pc110 \
+    sensors.s5pc110
 
 # tvout 
 PRODUCT_PACKAGES += \
