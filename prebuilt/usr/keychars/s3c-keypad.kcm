@@ -347,8 +347,8 @@ key COMMA {
     number:                             ','
     base:                               ','
     shift, capslock:                    ','
-    alt:                                none
-    shift+alt, capslock+alt:            none
+    alt:                                '\uEF01'
+    shift+alt, capslock+alt:            '\uEF01'
 }
 
 key PERIOD {
