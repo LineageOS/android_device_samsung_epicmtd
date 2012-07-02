@@ -14,8 +14,8 @@ key 1 {
     number:                             '1'
     base:                               '1'
     shift, capslock:                    '1'
-    alt:                                none
-    shift+alt, capslock+alt:            none
+    alt:                                '`' 
+    shift+alt, capslock+alt:            '`'
 }
 
 key 2 {
@@ -347,8 +347,8 @@ key COMMA {
     number:                             ','
     base:                               ','
     shift, capslock:                    ','
-    alt:                                '\uEF01'
-    shift+alt, capslock+alt:            '\uEF01'
+    alt:                                '\t'
+    shift+alt, capslock+alt:            '\t'
 }
 
 key PERIOD {
@@ -484,4 +484,13 @@ key PLUS {
     shift, capslock:                    '+'
     alt:                                '+'
     shift+alt, capslock+alt:            '+'
+}
+
+key FUNC_2 {
+    label:                              '\uEF01'
+    number:                             '\uEF01'
+    base:                               '\uEF01'
+    shift, capslock:                    '\uEF01'
+    alt:                                '\uEF03'
+    shift+alt, capslock+alt:            '\uEF03'
 }

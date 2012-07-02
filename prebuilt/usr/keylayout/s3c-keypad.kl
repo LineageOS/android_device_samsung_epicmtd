@@ -48,7 +48,7 @@ key 40    ENTER             WAKE_DROPPED
 
 key 41    SHIFT_LEFT        WAKE_DROPPED
 key 42    DPAD_CENTER       WAKE_DROPPED
-key 43    TAB               WAKE_DROPPED
+key 43    FUNC_2            WAKE_DROPPED
 key 44    COMMA             WAKE_DROPPED
 key 45    SPACE             WAKE_DROPPED
 
