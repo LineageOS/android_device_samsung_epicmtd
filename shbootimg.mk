@@ -13,7 +13,7 @@ $(WIFI_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 $(INSTALLED_RAMDISK_TARGET): $(WIFI_SYMLINK)
 
 INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
-$(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(recovery_ramdisk) $(INSTALLED_RAMDISK_TARGET)  $(PRODUCT_OUT)/utilities/erase_image $(PRODUCT_OUT)/utilities/flash_image $(PRODUCT_OUT)/utilities/busybox
+$(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(recovery_ramdisk) $(INSTALLED_RAMDISK_TARGET)  $(PRODUCT_OUT)/utilities/erase_image $(PRODUCT_OUT)/utilities/flash_image $(PRODUCT_OUT)/utilities/busybox $(PRODUCT_OUT)/utilities/make_ext4fs
 	$(call pretty,"Boot image: $@")
 	$(hide) ./device/samsung/epicmtd/mkshbootimg.py $@ $(PRODUCT_OUT)/kernel $(INSTALLED_RAMDISK_TARGET) $(recovery_ramdisk)
 
