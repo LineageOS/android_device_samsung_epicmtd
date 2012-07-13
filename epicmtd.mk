@@ -86,6 +86,7 @@ PRODUCT_COPY_FILES += \
 
 # update utilities
 PRODUCT_PACKAGES += \
+	make_ext4fs \
 	bml_over_mtd \
 	setup_fs
 
@@ -94,10 +95,11 @@ PRODUCT_PACKAGES += \
 	bdaddr_read
 
 # Camera
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
+     sensors.s5pc110
 #    libs3cjpeg \
 #    camera.s5pc110 \
-#    sensors.s5pc110
+    
 
 # tvout 
 PRODUCT_PACKAGES += \
