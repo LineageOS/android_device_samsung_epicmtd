@@ -60,7 +60,7 @@ PRODUCT_COPY_FILES += \
 
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
-	device/samsung/epicmtd/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry
+	hardware/samsung/exynos3/s5pc110/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
 #   hwcomposer.s5pc110
 
 PRODUCT_COPY_FILES += \
-        device/samsung/epicmtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
+    device/samsung/epicmtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 # ics libs (jb version not yet working)
 PRODUCT_COPY_FILES += \
