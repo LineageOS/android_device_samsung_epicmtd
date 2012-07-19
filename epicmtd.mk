@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
 #   hwcomposer.s5pc110
 
 PRODUCT_COPY_FILES += \
-    device/samsung/epicmtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
+    hardware/samsung/exynos3/s5pc110/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 # ics libs (jb version not yet working)
 PRODUCT_COPY_FILES += \
