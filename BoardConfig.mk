@@ -24,6 +24,9 @@ TARGET_BOOTLOADER_BOARD_NAME := s5pc110
 # Provide our own libaudio
 TARGET_PROVIDES_LIBAUDIO := true
 
+# Audio defines
+AUDIO_HW_OUT_LARGE_BUFFER := true
+
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetools/epicmtd_ota_from_target_files
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetools/epicmtd_img_from_target_files
