@@ -42,10 +42,6 @@ PRODUCT_COPY_FILES += \
      device/samsung/epicmtd/prebuilt/etc/ppp/ip-up:system/etc/ppp/ip-up
 FRAMEWORKS_BASE_SUBDIRS += ../../$(LOCAL_PATH)/epicril/
 
-# WiFi
-PRODUCT_COPY_FILES += \
-     device/samsung/epicmtd/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
 # Keylayout and Keychars
 PRODUCT_COPY_FILES += \
      device/samsung/epicmtd/prebuilt/usr/keylayout/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
@@ -166,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-       wifi.interface=eth0 \
+       wifi.interface=wlan0 \
        wifi.supplicant_scan_interval=20
 
 # enable Google-specific location features,
@@ -207,3 +203,6 @@ PRODUCT_COPY_FILES += \
 # of the aspects that require proprietary drivers that aren't
 # commonly available
 $(call inherit-product-if-exists, vendor/samsung/epicmtd/epicmtd-vendor.mk)
+
+WIFI_BAND := 802_11_BG
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
