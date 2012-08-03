@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//+gQ\u003d",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 2581
+      },
+      "writtenOn": "2012-08-03T22:04:23Z",
+      "side": 1,
+      "message": "Was this renamed to config_lidKeyboardAccessibility? Should it be removed?",
+      "revId": "b9b611b845230b34d413715ab0e64ba0d0059b24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
