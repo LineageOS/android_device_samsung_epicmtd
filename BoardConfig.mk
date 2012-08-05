@@ -55,6 +55,10 @@ BOARD_V4L2_DEVICE := /dev/video1
 BOARD_CAMERA_DEVICE := /dev/video0
 BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
+# Bootanimation Optimization
+TARGET_BOOTANIMATION_PRELOAD := false
+TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+
 # Max image/partition sizes
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
 BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00500000)
