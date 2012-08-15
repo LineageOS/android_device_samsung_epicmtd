@@ -227,6 +227,12 @@ on boot
   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
   chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+  chown root system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+  chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+  chown root system /sys/devices/system/cpu/cpufreq/ondemand/boostpulse
+  chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/boostpulse
+  chown root system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+  chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 
   # For datarouter
   chown system system /dev/ttyGS0
@@ -237,7 +243,7 @@ on boot
   chmod 0664 /sys/devices/virtual/sec/t_key/touchleds_disabled
 
   # Set keypad delays to recommended values.
-  write /sys/devices/platform/s3c-keypad/column_delay 5
+  write /sys/devices/platform/s3c-keypad/column_delay 35
   write /sys/devices/platform/s3c-keypad/timer_delay  5
 
 # Samsung USB Mode : system properties are linked with sysfs

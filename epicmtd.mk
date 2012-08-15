@@ -73,6 +73,7 @@ PRODUCT_PACKAGES += \
 # Libs
 PRODUCT_PACKAGES += \
     lights.s5pc110 \
+    power.s5pc110 \
     audio.primary.s5pc110 \
     audio_policy.s5pc110 \
     audio.a2dp.default \
