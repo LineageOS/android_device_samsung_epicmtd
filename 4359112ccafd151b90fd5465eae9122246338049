@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//+zg\u003d",
+        "filename": "init.victory.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2890
+      },
+      "writtenOn": "2012-08-17T21:56:48Z",
+      "side": 1,
+      "message": "increase column_delay to 25",
+      "revId": "4359112ccafd151b90fd5465eae9122246338049",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
