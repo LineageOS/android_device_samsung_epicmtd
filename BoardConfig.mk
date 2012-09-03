@@ -24,8 +24,6 @@ TARGET_BOOTLOADER_BOARD_NAME := s5pc110
 # Provide our own libaudio
 TARGET_PROVIDES_LIBAUDIO := true
 
-BOARD_HAS_SAMSUNG_VOLUME_BUG := true
-
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetools/epicmtd_ota_from_target_files
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/epicmtd/releasetools/epicmtd_img_from_target_files
