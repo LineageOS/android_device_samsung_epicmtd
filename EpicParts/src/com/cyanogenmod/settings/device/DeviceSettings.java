@@ -42,6 +42,7 @@ public class DeviceSettings extends Activity {
     public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
     public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
     public static final String KEY_TOUCHKEYLED = "touchkey_led";
+    public static final String KEY_USE_DOCK_AUDIO = "dock_audio";
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
@@ -62,6 +63,8 @@ public class DeviceSettings extends Activity {
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText(R.string.general_title),
                 GeneralFragmentActivity.class, null);
+        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_dock_title),
+                DockFragmentActivity.class, null);
 
         if (savedInstanceState != null) {
             bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 0));

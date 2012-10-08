@@ -10,4 +10,9 @@
     <string name="touchkey_led_summary_head">The capacitive touchkey backlights will not light after timeout unless pressed.</string>
     <string name="touchkey_led_toast_message">Preference change will take effect after the screen is turned off and on.</string>
 
+    <string name="category_dock_title">Dock</string>
+    <string name="dockaudio_subcat_title">DOCK AUDIO</string>
+    <string name="use_dock_audio_title_head">Use Dock USB Audio</string>
+    <string name="use_dock_audio_summary_head">Use the passive audio out on the dock</string>
+
 </resources>
