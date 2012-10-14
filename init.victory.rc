@@ -252,6 +252,10 @@ on boot
   chown root system /sys/devices/virtual/sec/t_key/touchleds_disabled
   chmod 0664 /sys/devices/virtual/sec/t_key/touchleds_disabled
 
+  # EpicParts: Touchkey Backlight Brightness
+  chown root system /sys/devices/virtual/sec/t_key/touchleds_voltage
+  chmod 0664 /sys/devices/virtual/sec/t_key/touchleds_voltage
+
   # Set keypad delays to recommended values.
   write /sys/devices/platform/s3c-keypad/column_delay 35
   write /sys/devices/platform/s3c-keypad/timer_delay  5

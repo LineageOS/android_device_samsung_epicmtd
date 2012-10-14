@@ -9,6 +9,14 @@
         <CheckBoxPreference android:key="touchkey_led"
             android:title="@string/touchkey_led_title_head"
             android:summary="@string/touchkey_led_summary_head" />
+
+        <ListPreference android:key="touchkey_brightness"
+            android:title="@string/touchkey_dim_title_head"
+            android:summary="@string/touchkey_dim_summary_head"
+            android:entries="@array/touchkey_brightness_entries"
+                android:entryValues="@array/touchkey_brightness_values"
+                android:defaultValue="3000000" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
