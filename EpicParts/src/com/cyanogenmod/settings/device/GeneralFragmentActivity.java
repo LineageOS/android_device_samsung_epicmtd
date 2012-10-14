@@ -39,6 +39,7 @@ public class GeneralFragmentActivity extends PreferenceFragment {
     private static final String TAG = "EpicParts_General";
 
     private CheckBoxPreference mTouchkeyLED;
+    private TouchkeyBrightness mTouchkeyBrightness;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,12 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         } else {
             mTouchkeyLED.setEnabled(false);
         }
+
+        mTouchkeyBrightness = (TouchkeyBrightness) findPreference(DeviceSettings.KEY_TOUCHKEY_BRIGHTNESS);
+
+        //if (!TouchkeyBrightness.isSupported()) {
+            //prefs.removePreference(mTouchkeyBrightness);
+        //}
 
     }
 
