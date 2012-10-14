@@ -35,10 +35,12 @@ import com.cyanogenmod.settings.device.R;
 public class GeneralFragmentActivity extends PreferenceFragment {
 
     private static final String TOUCHKEY_LED_FILE = "/sys/devices/virtual/sec/t_key/touchleds_disabled";
+    private static final String TOUCHKEY_VOLTAGE_FILE = "/sys/devices/virtual/sec/t_key/touchleds_voltage";
     private static final String PREF_ENABLED = "1";
     private static final String TAG = "EpicParts_General";
 
     private CheckBoxPreference mTouchkeyLED;
+    private ListPreference mTouchkeyBrightness;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,11 +50,27 @@ public class GeneralFragmentActivity extends PreferenceFragment {
 
         PreferenceScreen prefSet = getPreferenceScreen();
         mTouchkeyLED = (CheckBoxPreference) findPreference(DeviceSettings.KEY_TOUCHKEYLED);
+        mTouchkeyBrightness = (ListPreference) findPreference(DeviceSettings.KEY_TOUCHKEY_BRIGHTNESS);
+
+        mTouchkeyBrightness.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Utils.writeValue(TOUCHKEY_VOLTAGE_FILE, (String) newValue);
+
+                Toast toast = Toast.makeText(getActivity(), R.string.touchkey_dim_toast_message, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100);
+                toast.show();
+                return true;
+            }
+        });
 
         if (isSupported(TOUCHKEY_LED_FILE)) {
             mTouchkeyLED.setChecked(PREF_ENABLED.equals(Utils.readOneLine(TOUCHKEY_LED_FILE)));
         } else {
             mTouchkeyLED.setEnabled(false);
+        }
+
+        if (!isSupported(TOUCHKEY_VOLTAGE_FILE)) {
+            mTouchkeyBrightness.setEnabled(false);
         }
 
     }
@@ -70,7 +88,7 @@ public class GeneralFragmentActivity extends PreferenceFragment {
             Utils.writeValue(TOUCHKEY_LED_FILE, boxValue);
 
 	    Toast toast = Toast.makeText(getActivity(), R.string.touchkey_led_toast_message, Toast.LENGTH_LONG);
-	    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+	    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100);
 	    toast.show();
         }
 
@@ -86,6 +104,9 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         if (isSupported(TOUCHKEY_LED_FILE)) {
             String sDefaultValue = Utils.readOneLine(TOUCHKEY_LED_FILE);
             Utils.writeValue(TOUCHKEY_LED_FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEYLED, PREF_ENABLED.equals(sDefaultValue)));
+        }
+        if (isSupported(TOUCHKEY_VOLTAGE_FILE)) {
+            Utils.writeValue(TOUCHKEY_VOLTAGE_FILE, sharedPrefs.getString(DeviceSettings.KEY_TOUCHKEY_BRIGHTNESS, "0"));
         }
     }
 }
