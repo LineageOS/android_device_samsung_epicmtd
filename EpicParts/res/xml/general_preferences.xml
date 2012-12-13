@@ -6,9 +6,9 @@
     <!-- Capacitive touchkey backlight disable -->
     <PreferenceCategory android:key="category_touchkey"
         android:title="@string/category_touchkey_title">
-        <CheckBoxPreference android:key="touchkey_led"
+<!--        <CheckBoxPreference android:key="touchkey_led"
             android:title="@string/touchkey_led_title_head"
-            android:summary="@string/touchkey_led_summary_head" />
+            android:summary="@string/touchkey_led_summary_head" /> -->
 
         <ListPreference android:key="touchkey_brightness"
             android:title="@string/touchkey_brightness_title_head"

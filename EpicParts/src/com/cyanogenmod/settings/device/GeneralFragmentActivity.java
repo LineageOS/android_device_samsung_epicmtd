@@ -49,7 +49,7 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         addPreferencesFromResource(R.xml.general_preferences);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-        mTouchkeyLED = (CheckBoxPreference) findPreference(DeviceSettings.KEY_TOUCHKEYLED);
+//        mTouchkeyLED = (CheckBoxPreference) findPreference(DeviceSettings.KEY_TOUCHKEYLED);
         mTouchkeyBrightness = (ListPreference) findPreference(DeviceSettings.KEY_TOUCHKEY_BRIGHTNESS);
 
         mTouchkeyBrightness.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
@@ -63,11 +63,11 @@ public class GeneralFragmentActivity extends PreferenceFragment {
             }
         });
 
-        if (isSupported(TOUCHKEY_LED_FILE)) {
-            mTouchkeyLED.setChecked(PREF_ENABLED.equals(Utils.readOneLine(TOUCHKEY_LED_FILE)));
-        } else {
-            mTouchkeyLED.setEnabled(false);
-        }
+//        if (isSupported(TOUCHKEY_LED_FILE)) {
+//            mTouchkeyLED.setChecked(PREF_ENABLED.equals(Utils.readOneLine(TOUCHKEY_LED_FILE)));
+//        } else {
+//            mTouchkeyLED.setEnabled(false);
+//        }
 
         if (!isSupported(TOUCHKEY_BRIGHTNESS_FILE)) {
             mTouchkeyBrightness.setEnabled(false);
@@ -82,15 +82,15 @@ public class GeneralFragmentActivity extends PreferenceFragment {
         String key = preference.getKey();
 
         Log.w(TAG, "key: " + key);
-	if (key.equals(DeviceSettings.KEY_TOUCHKEYLED)) {
-            final CheckBoxPreference chkPref = (CheckBoxPreference) preference;
-            boxValue = chkPref.isChecked() ? "1" : "0";
-            Utils.writeValue(TOUCHKEY_LED_FILE, boxValue);
-
-	    Toast toast = Toast.makeText(getActivity(), R.string.touchkey_led_toast_message, Toast.LENGTH_LONG);
-	    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100);
-	    toast.show();
-        }
+//	if (key.equals(DeviceSettings.KEY_TOUCHKEYLED)) {
+//            final CheckBoxPreference chkPref = (CheckBoxPreference) preference;
+//            boxValue = chkPref.isChecked() ? "1" : "0";
+//            Utils.writeValue(TOUCHKEY_LED_FILE, boxValue);
+//
+//	    Toast toast = Toast.makeText(getActivity(), R.string.touchkey_led_toast_message, Toast.LENGTH_LONG);
+//	    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100);
+//	    toast.show();
+//        }
 
         return true;
     }
@@ -101,10 +101,10 @@ public class GeneralFragmentActivity extends PreferenceFragment {
 
     public static void restore(Context context) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        if (isSupported(TOUCHKEY_LED_FILE)) {
-            String sDefaultValue = Utils.readOneLine(TOUCHKEY_LED_FILE);
-            Utils.writeValue(TOUCHKEY_LED_FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEYLED, PREF_ENABLED.equals(sDefaultValue)));
-        }
+//        if (isSupported(TOUCHKEY_LED_FILE)) {
+//            String sDefaultValue = Utils.readOneLine(TOUCHKEY_LED_FILE);
+//            Utils.writeValue(TOUCHKEY_LED_FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEYLED, PREF_ENABLED.equals(sDefaultValue)));
+//        }
         if (isSupported(TOUCHKEY_BRIGHTNESS_FILE)) {
             Utils.writeValue(TOUCHKEY_BRIGHTNESS_FILE, sharedPrefs.getString(DeviceSettings.KEY_TOUCHKEY_BRIGHTNESS, "0"));
         }
