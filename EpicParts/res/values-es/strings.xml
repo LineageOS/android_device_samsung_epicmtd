@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ajustes Epic 4G</string>
+    <string name="general_title">GENERAL</string>
+    <string name="category_touchkey_title">Botones capacitativos</string>
+    <string name="touchkey_led_title_head">Desactivar iluminación</string>
+    <string name="touchkey_led_summary_head">Los botones capacitativos no se iluminarán hasta que no sean pulsados</string>
+    <string name="touchkey_led_toast_message">El cambio será efectivo cuando se apague y se vuelva a encender la pantalla.</string>
+    <string name="touchkey_brightness_title_head">Brillo</string>
+    <string name="touchkey_brightness_summary_head">Establecer el brillo de la iluminación de los botones capacitativos</string>
+    <string name="touchkey_brightness_toast_message">Restableciendo el controlador táctil. Espere por favor\u2026</string>
+    <string name="category_dock_title">Base</string>
+    <string name="dockaudio_subcat_title">SONIDO DE LA BASE</string>
+    <string name="use_dock_audio_title_head">Usar sonido USB</string>
+    <string name="use_dock_audio_summary_head">Utilizar la salida de audio de la base</string>
+</resources>
