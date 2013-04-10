@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAen//8u0\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-04-10T15:18:01Z",
+      "side": 1,
+      "message": "\"táctiles\" is better, isn\u0027t it?",
+      "parentUuid": "AAAAen//82g\u003d",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAen//82c\u003d",
         "filename": "EpicParts/res/values-es/strings.xml",
         "patchSetId": 1
