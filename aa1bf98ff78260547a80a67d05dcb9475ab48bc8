@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//82w\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-10T02:31:20Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//82s\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-10T02:31:20Z",
+      "side": 1,
+      "message": "General",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//82g\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-10T02:31:20Z",
+      "side": 1,
+      "message": "The rae doesn\u0027t define any of both, but i pretty sure that the term \"capacitivos\" is a better translation. Don\u0027t you?. Please review this term in other devices parts and this device also",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//82c\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-10T02:31:20Z",
+      "side": 1,
+      "message": "Retroiluminación (for coherence with other devices).",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//82U\u003d",
+        "filename": "EpicParts/res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-10T02:31:20Z",
+      "side": 1,
+      "message": "Sonido de la base",
+      "revId": "aa1bf98ff78260547a80a67d05dcb9475ab48bc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
