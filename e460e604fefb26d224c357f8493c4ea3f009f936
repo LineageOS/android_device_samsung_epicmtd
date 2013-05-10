@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn//+Sg\u003d",
+        "filename": "EpicParts/res/values-fr/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-05-10T18:36:28Z",
+      "side": 1,
+      "message": "certain\n\nappuyées -\u003e touchées",
+      "revId": "e460e604fefb26d224c357f8493c4ea3f009f936",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
