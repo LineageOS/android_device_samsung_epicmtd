@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "hrGdols",
+        "filename": "EpicParts/res/values-fr/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-05-19T00:47:09Z",
+      "side": 1,
+      "message": "\"un certain temps\" ?",
+      "revId": "0cf3d5d5990b6a4231b2eb0541dd5d79e0782c04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
