@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iKjL.XE",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2013-06-01T14:03:33Z",
+      "side": 1,
+      "message": "Waarom hoofdletter? Lijkt raar voor een subcategorie titel. \nNet gecheckt, origineel Engels heeft dit, maar de vertalingen niet?!",
+      "revId": "06f8311a1d0c7986b09ea8725df6ccf30105a6ea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iAirBYs",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2013-06-01T14:03:33Z",
+      "side": 1,
+      "message": "Waarom dit niet trilintensiteit noemen?",
+      "revId": "06f8311a1d0c7986b09ea8725df6ccf30105a6ea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iOivsZI",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2013-06-01T14:03:33Z",
+      "side": 1,
+      "message": "Ook hier zou ik trilintensiteit gebruiken",
+      "revId": "06f8311a1d0c7986b09ea8725df6ccf30105a6ea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
