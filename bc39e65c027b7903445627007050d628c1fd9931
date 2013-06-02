@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iOs560I",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Aanraakknoppen",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iKs8EzA",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Aanraakknoppen niet oplichten",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iMs-RyQ",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "Achtergrondlicht*\n\nuitgeschakeld*",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iItJT9M",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Scherm uit- en weer aanzetten om toe te passen",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iGtG.8A",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Helderheid instellen van aanraakknoppenlicht",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iEsSF7Y",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "resetten !\u003d herstellen\n\ngeen \";\"\n\n- De aanraakcontroller wordt opnieuw ingesteld, een ogenblik geduld a.u.b.",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iCsX46Q",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Geluid",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iAsMH5M",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- USB-geluidsdock\n\n(zie i9100)",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iOsQy6o",
+        "filename": "EpicParts/res/values-nl/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-06-02T05:01:23Z",
+      "side": 1,
+      "message": "- Passieve geluidsuitgang van het dock gebruiken\n\n(zie i9100)",
+      "revId": "bc39e65c027b7903445627007050d628c1fd9931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
