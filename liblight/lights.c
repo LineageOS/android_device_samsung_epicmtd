@@ -20,6 +20,7 @@
 #define LOG_TAG "lights"
 #include <cutils/log.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -36,11 +37,34 @@ static char const BLUE_LED_DIR[]  = "/sys/class/leds/blue";
 static char const LCD_FILE[]      = "/sys/class/backlight/s5p_bl/brightness";
 static char const KEYBOARD_FILE[] = "/sys/devices/platform/s3c-keypad/brightness";
 static char const BUTTONS_FILE[]  = "/sys/class/sec/t_key/brightness";
+static char const BRIGHTNESS_FILE[] = "/sys/devices/virtual/sec/t_key/touchleds_voltage";
 
 static struct led_state {
 	unsigned int enabled;
 	int          delay_on, delay_off;
 } battery_red, battery_blue, notifications_red, notifications_blue;
+
+static int read_int(char const *path)
+{
+	int fd;
+	static int already_warned = 0;
+
+	ALOGV("read_int: path=\"%s\".", path);
+	fd = open(path, O_RDONLY);
+
+	if (fd >= 0) {
+		char buffer[20];
+		int amt = read(fd, buffer, sizeof(buffer) - 1);
+		close(fd);
+		return amt == -1 ? -errno : atoi(buffer);
+	} else {
+		if (already_warned == 0) {
+			ALOGE("read_int failed to open %s\n", path);
+			already_warned = 1;
+		}
+		return -errno;
+	}
+}
 
 static int write_int(char const *path, int value)
 {
@@ -254,8 +278,35 @@ static int set_light_buttons(struct light_device_t *dev,
 
 	int touch_led_control = !!(state->color & 0x00ffffff);
 	int res;
+        int set_voltage;
+	int brightness = rgb_to_brightness(state);
 
-	ALOGD("set_light_buttons: color=%#010x, tlc=%u.", state->color,
+        if (brightness > 0) {
+            if (brightness < 10) {
+                set_voltage = 2300000;
+            } else if (brightness < 100) {
+                set_voltage = 2500000;
+            } else if (brightness < 150) {
+                set_voltage = 2600000;
+            } else if (brightness < 220) {
+                set_voltage = 2700000;
+            } else {
+                set_voltage = 3000000;
+            }
+
+            int cur_voltage = read_int(BRIGHTNESS_FILE);
+            if (cur_voltage > 0) {
+                if (cur_voltage != set_voltage) {
+	            ALOGD("set_light_buttons: setting new voltage(%u), old voltage(%u)\n", set_voltage, cur_voltage);
+	            pthread_mutex_lock(&g_lock);
+                    write_int(BRIGHTNESS_FILE, set_voltage);
+	            pthread_mutex_unlock(&g_lock);
+                }
+            }
+	    ALOGD("set_light_buttons: current voltage=%u, set_voltage=%u\n", cur_voltage, set_voltage);
+        }
+
+	ALOGD("set_light_buttons: brightness=%u, color=%#010x, tlc=%u.", brightness, state->color,
 	     touch_led_control);
 
 	pthread_mutex_lock(&g_lock);
