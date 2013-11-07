@@ -124,10 +124,10 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/charging_mode
 # Suspend in charger to disable capacitive keys
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
         device/samsung/epicmtd/sepolicy
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
 	device.te \
 	domain.te \
 	file_contexts \
