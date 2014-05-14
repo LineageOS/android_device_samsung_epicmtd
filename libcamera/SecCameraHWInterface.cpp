@@ -2164,7 +2164,18 @@ CameraParameters CameraHardwareSec::getParameters() const
 
 status_t CameraHardwareSec::sendCommand(int32_t command, int32_t arg1, int32_t arg2)
 {
-    return BAD_VALUE;
+    status_t ret = NO_ERROR;
+
+    switch(command)
+        {
+            case CAMERA_CMD_ENABLE_FOCUS_MOVE_MSG:
+                break;
+            default:
+                ret = BAD_VALUE;
+                break;
+        };
+
+    return ret;
 }
 
 void CameraHardwareSec::release()
