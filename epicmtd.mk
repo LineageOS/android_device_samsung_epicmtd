@@ -158,7 +158,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
        wifi.supplicant_scan_interval=20 \
-       ro.bq.gpu_to_cpu_unsupported=1
+       ro.bq.gpu_to_cpu_unsupported=1 \
+       ro.config.low_ram=true
 
 # SGX540 is slower with the scissor optimization enabled
 PRODUCT_PROPERTY_OVERRIDES += \
